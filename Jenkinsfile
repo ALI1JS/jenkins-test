@@ -30,12 +30,12 @@ pipeline {
          }
        }
 
-      //  stage ('Create Nginx')
-      //  {
-      //      steps {
-               
-      //      }
-      //  }
+        stage ('Create Nginx')
+        {
+            steps {
+                 sh 'docker run -d --name nginx -p 80:80 nginx:lts'
+           }
+        }
 
       //  post {
       //     always {
