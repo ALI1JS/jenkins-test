@@ -13,22 +13,22 @@ pipeline {
           }
        }
 
-      //  stage ('Build')
-      //  {
-      //    agent {
-      //       docker {
-      //            image 'node:18-alpine'
-      //       }
-      //    }
+       stage ('Build')
+       {
+         agent {
+            docker {
+                 image 'node:18-alpine'
+            }
+         }
 
-      //    steps {
+         steps {
 
-      //       sh ''' 
-      //            touch test.txt
-      //            echo "Hello From Docker in Docker " >> test.txt
-      //       '''
-      //    }
-      //  }
+            sh ''' 
+                 touch ali.txt
+                 echo node --version >> ali.txt
+            '''
+         }
+       }
 
       //  stage ('Create Nginx')
       //  {
