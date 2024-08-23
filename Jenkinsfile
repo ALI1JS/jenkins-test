@@ -40,14 +40,18 @@ pipeline {
            }
         }
 
-      //  post {
-      //     always {
+        stage ('Stop Nginx')
+        {
+            steps {
+                 sh 'docker stop nginx'
+           }
+        }
+       post {
+          always {
                
-      //          sh ``` 
-      //               cat test.txt
-      //          ```
-      //     }
-      //  }
+               sh ```cat ali.txt ```
+          }
+       }
 
     }
 }
