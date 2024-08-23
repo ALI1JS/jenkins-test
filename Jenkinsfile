@@ -46,10 +46,11 @@ pipeline {
                  sh 'docker stop nginx'
            }
         }
+
        post {
           always {
                
-               sh ''' cat ali.txt '''
+               sh 'cat ali.txt '
           }
        }
 
