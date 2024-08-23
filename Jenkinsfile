@@ -24,8 +24,8 @@ pipeline {
          steps {
 
             sh ''' 
-                 touch ali.txt
-                 echo node --version >> ali.txt
+                 touch $WORKSPACE/ali.txt
+                 node --version >> $WORKSPACE/ali.txt
             '''
          }
        }
@@ -40,18 +40,11 @@ pipeline {
            }
         }
 
-        stage ('Stop Nginx')
-        {
-            steps {
-                 sh 'docker stop nginx'
-           }
-        }
-
     }
     post {
           always {
                
-             sh 'cat ali.txt'
+             sh 'cat $WORKSPACE/ali.txt'
           }
        }
 }
