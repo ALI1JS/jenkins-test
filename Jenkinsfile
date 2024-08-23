@@ -17,13 +17,14 @@ pipeline {
          agent {
             docker {
                image 'node:18-alpine'
+               args '-v $WORKSPACE:/workspace'
             }
          }
 
          steps {
             sh '''
-                 touch ali.txt
-                 node --version >> ali.txt
+                 touch /workspace/ali.txt
+                 node --version >> /workspace/ali.txt
             '''
          }
        }
@@ -35,7 +36,6 @@ pipeline {
                   docker pull nginx:latest
                   docker run -d --name nginx -p 80:80 nginx
                   '''
-            sh 'cp ali.txt $WORKSPACE/ali.txt'
             }
         }
    }
