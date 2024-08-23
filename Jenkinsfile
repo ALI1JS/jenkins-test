@@ -47,12 +47,11 @@ pipeline {
            }
         }
 
-       post {
+    }
+    post {
           always {
                
-              echo 'Pipeline completed'
+             sh 'cat ali.txt'
           }
        }
-
-    }
 }
