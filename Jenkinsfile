@@ -34,8 +34,9 @@ pipeline {
         {
             steps {
                  sh '''
-                  docker pull nginx:lts
-                  docker run -d --name nginx -p 80:80 nginx'''
+                  docker pull nginx:latest
+                  docker run -d --name nginx -p 80:80 nginx
+                  '''
            }
         }
 
