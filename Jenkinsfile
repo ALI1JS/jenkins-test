@@ -50,7 +50,7 @@ pipeline {
        post {
           always {
                
-               sh 'cat ali.txt '
+              echo 'Pipeline completed'
           }
        }
 
