@@ -17,14 +17,13 @@ pipeline {
          agent {
             docker {
                image 'node:18-alpine'
-               args '-v $WORKSPACE:/workspace'
             }
          }
 
          steps {
             sh '''
-                 touch /ali.txt
-                 node --version >> /ali.txt
+                 touch ali.txt
+                 node --version >> ali.txt
             '''
          }
        }
