@@ -39,9 +39,9 @@ pipeline {
             }
         }
    }
-   post {
-      always {
-        sh 'echo "I cant make the file access globale in all stages" '
-      }
-   }
+   // post {
+   //    always {
+   //      sh 'echo "I cant make the file access globale in all stages" '
+   //    }
+   // }
 }
