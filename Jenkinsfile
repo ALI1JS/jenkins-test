@@ -23,8 +23,8 @@ pipeline {
 
          steps {
             sh '''
-                 touch /workspace/ali.txt
-                 node --version >> /workspace/ali.txt
+                 touch /ali.txt
+                 node --version >> /ali.txt
             '''
          }
        }
@@ -41,7 +41,7 @@ pipeline {
    }
    post {
       always {
-         echo "I can't make the file access globale in all stages"
+        sh 'echo "I cant make the file access globale in all stages" '
       }
    }
 }
