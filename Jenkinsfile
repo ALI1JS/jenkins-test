@@ -41,7 +41,7 @@ pipeline {
    }
    post {
       always {
-         sh 'cat $WORKSPACE/ali.txt || true'
+         echo "I can't make the file access globale in all stages"
       }
    }
 }
